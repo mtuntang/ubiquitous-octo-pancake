@@ -1,13 +1,14 @@
 package model;
 
-import java.io.Serializable;
+import java.io.*;
+import java.util.Objects;
 
 public class Task implements Serializable {
-    long startTime;
-    long endTime;
-    long avgTime;
-    String name;
-    int numberOfTimesRun;
+    private long startTime;
+    private long endTime;
+    private long avgTime;
+    private String name;
+    private int numberOfTimesRun;
 
     public Task(String name){
         this.name = name;
@@ -18,14 +19,42 @@ public class Task implements Serializable {
     }
 
     public void endTime(){
-
+        endTime = System.nanoTime();
+        numberOfTimesRun++;
     }
 
     public void update(){
-
+        avgTime = (endTime - startTime)/numberOfTimesRun;
     }
 
-    public void save(){
+    public void load() throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream(this.name + ".dat"));
+        Task load = (Task)in.readObject();
+        loadFields(load);
+    }
 
+    public void loadFields(Task task) throws IOException{
+        this.name = task.name;
+        this.avgTime = task.avgTime;
+        this.numberOfTimesRun = task.numberOfTimesRun;
+    }
+
+    public void save() throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(this.name + ".dat"));
+        out.writeObject(this);
+        out.close();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return name.equals(task.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
