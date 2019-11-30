@@ -1,6 +1,7 @@
 package model;
 
 import java.io.*;
+import java.util.Objects;
 
 public class Task implements Serializable {
     private long startTime;
@@ -27,7 +28,7 @@ public class Task implements Serializable {
     }
 
     public void load() throws IOException, ClassNotFoundException {
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("stub.dat"));
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream(this.name + ".dat"));
         Task load = (Task)in.readObject();
         loadFields(load);
     }
@@ -39,8 +40,21 @@ public class Task implements Serializable {
     }
 
     public void save() throws IOException {
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("stub.dat"));
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(this.name + ".dat"));
         out.writeObject(this);
         out.close();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return name.equals(task.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
