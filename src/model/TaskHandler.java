@@ -1,25 +1,23 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TaskHandler {
 
-    private List<Task> taskList;
+    private Map taskMap;
 
     public TaskHandler() {
-        taskList = new ArrayList<>();
+        taskMap = new HashMap<String, Task>();
     }
 
-    public void addTask(Task task) {
-        taskList.add(task);
+    public void addTask(String name) {
+        taskMap.put(new Task(name));
     }
-    public void removeTask(Task task) {
-        for (Task t : taskList){
-            if (t.name.equals(task.name)){
-                taskList.remove(t)
-            }
-        }
-        if(task.name.e)
-    }
+
+    public Map getMap() {
+        return taskMap;
+   }
 }
