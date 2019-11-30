@@ -4,7 +4,7 @@ import model.TaskHandler;
 import java.util.Scanner;
 
 public class Main {
-    TaskHandler taskHandler = new TaskHandler();
+    static TaskHandler taskHandler = new TaskHandler();
 
     public static void main(String[] args) {
         welcome();
@@ -14,6 +14,12 @@ public class Main {
     }
 
     private static void welcome() {
+        System.out.println("Welcome to the task handler");
+        System.out.println("Actions:");
+        System.out.println("1 - Add a new task");
+        System.out.println("2 - Remove a task");
+        System.out.println("3 - Run a task");
+        System.out.println();
     }
 
     public static void queryTask() {
