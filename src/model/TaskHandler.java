@@ -49,6 +49,10 @@ public class TaskHandler {
         }
     }
 
+    public void startTask(String name) {
+        Task currentTask = taskMap.get(name);
+        currentTask.startTime();
+    }
     public boolean updateTime(String name) {
         Task currentTask = taskMap.get(name);
         if (currentTask.getAvgTime() > currentTask.getElapsedTime()) {
@@ -60,6 +64,7 @@ public class TaskHandler {
 
     public void endTask(String name) {
         Task currentTask = taskMap.get(name);
+        currentTask.endTime();
         currentTask.setNumberOfTimesRun(currentTask.getNumberOfTimesRun()+1);
         currentTask.update();
 
