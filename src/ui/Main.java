@@ -61,6 +61,7 @@ public class Main {
                 notNotified = false;
             }
         }
+        taskHandler.endTask();
     }
 
     public static void displayTasks() {
