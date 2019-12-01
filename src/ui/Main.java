@@ -26,9 +26,9 @@ public class Main {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Name your task: ");
         String taskName = myObj.nextLine();  // Read user input
-        taskHandler.addTask(taskname);
+        taskHandler.addTask(taskName);
     }
-    
+
 
     public static void removeTask() {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
