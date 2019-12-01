@@ -16,6 +16,6 @@ Future implementations :
               
 
 Contributors :
-Hao Chen Lu
-Hassan 
-Michael Tuntang (used wrong github account for a majority of contributions)
+* Hao Chen Lu
+* Hassan 
+* Michael Tuntang (used wrong github account for a majority of contributions)
