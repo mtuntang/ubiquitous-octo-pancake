@@ -32,6 +32,10 @@ public class TaskHandler {
             e.printStackTrace();
         }
     }
+    public void clearData() {
+        taskMap = new HashMap<String, Task>();
+        save();
+    }
 
     //REQUIRES : save.txt exists in model package
     //EFFECTS : loads save data, makes a pointer to local TotalExpenses field
