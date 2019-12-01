@@ -49,7 +49,7 @@ public class Main {
         System.out.println("enter q to stop the task");
         while (!endTask) {
             Scanner taskChecker = new Scanner(System.in);  // Create a Scanner object
-            String toQuit = myObj.nextLine();  // Read user input
+            String toQuit = taskChecker.nextLine();  // Read user input
             if (toQuit.equals("q")) {
                 endTask = true;
             }
