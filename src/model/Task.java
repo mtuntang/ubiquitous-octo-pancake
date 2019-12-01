@@ -7,6 +7,7 @@ public class Task implements Serializable{
     private long startTime;
     private long endTime;
     private long avgTime;
+    private long totalTime;
     private String name;
     private int numberOfTimesRun;
 
@@ -48,7 +49,8 @@ public class Task implements Serializable{
     }
 
     public void update(){
-        avgTime = (endTime - startTime)/numberOfTimesRun;
+        totalTime += (endTime - startTime);
+        avgTime = totalTime/numberOfTimesRun;
     }
 
     public void load() throws IOException, ClassNotFoundException {
