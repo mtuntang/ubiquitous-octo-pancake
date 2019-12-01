@@ -32,6 +32,10 @@ public class TaskHandler {
             e.printStackTrace();
         }
     }
+    public void clearData() {
+        taskMap = new HashMap<String, Task>();
+        save();
+    }
 
     //REQUIRES : save.txt exists in model package
     //EFFECTS : loads save data, makes a pointer to local TotalExpenses field
@@ -65,7 +69,6 @@ public class TaskHandler {
     public void endTask(String name) {
         Task currentTask = taskMap.get(name);
         currentTask.endTime();
-        currentTask.setNumberOfTimesRun(currentTask.getNumberOfTimesRun()+1);
         currentTask.update();
 
     }
