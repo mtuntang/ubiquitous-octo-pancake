@@ -87,7 +87,7 @@ public class Main {
             }
             default:
                 displayTasks();
-                break
+                break;
         }
     }
 
