@@ -49,11 +49,12 @@ public class TaskHandler {
         }
     }
 
-    public void runTask(String name) {
+    public boolean checkTime(String name) {
         Task currentTask = taskMap.get(name);
-        if (!run) {
-            if (currentTask.getAvgTime() > task.get)
-            currentTask.avgTime >
+        if (currentTask.getAvgTime() > currentTask.getElapsedTime()) {
+                return true;
+        } else {
+            return false;
         }
 
 
