@@ -7,9 +7,11 @@ public class Main {
     static TaskHandler taskHandler = new TaskHandler();
 
     public static void main(String[] args) {
-        welcome();
-        while (true) {
-
+        Scanner in = new Scanner(System.in);
+        int userInput = 0;
+        while (userInput != 4) {
+            welcome();
+            userInput = in.nextInt();
         }
     }
 
