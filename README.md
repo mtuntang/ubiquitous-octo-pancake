@@ -8,11 +8,11 @@ Future implementations :
 - GUI, notification bug fix
 - Transition to Android app
   * interactive collapsible notification tab where users can set up to 5 tasks to tracks to ensure ease of access
-      > implemented with icons
-      > pops up a notification if amount of time spend on a certain task exceeds maximum value or average time spend
-          >when an icon is selected 
-              >it is highlighted and others will blurred
-              >runs selected task and stops previously running task
+  * implemented with icons
+  * pops up a notification if amount of time spend on a certain task exceeds maximum value or average time spend
+  * when an icon is selected 
+  * it is highlighted and others will blurred
+  * runs selected task and stops previously running task
               
 
 Contributors :
