@@ -3,7 +3,7 @@ package model;
 import java.io.*;
 import java.util.Objects;
 
-public class Task implements Serializable {
+public class Task implements Serializable{
     private long startTime;
     private long endTime;
     private long avgTime;
@@ -41,6 +41,10 @@ public class Task implements Serializable {
     public void endTime(){
         endTime = System.nanoTime();
         numberOfTimesRun++;
+    }
+
+    public long getElapsedTime(){
+        return System.nanoTime() - startTime;
     }
 
     public void update(){
