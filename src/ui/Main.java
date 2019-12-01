@@ -49,6 +49,7 @@ public class Main {
         String taskName = myObj.nextLine();  // Read user input
         boolean endTask = false;
         boolean notNotified = true;
+        taskHandler.startTask(taskName);
         System.out.println("enter q to stop the task");
         while (!endTask) {
             Scanner taskChecker = new Scanner(System.in);  // Create a Scanner object

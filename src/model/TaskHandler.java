@@ -55,7 +55,7 @@ public class TaskHandler {
     }
     public boolean updateTime(String name) {
         Task currentTask = taskMap.get(name);
-        if (currentTask.getAvgTime() > currentTask.getElapsedTime()) {
+        if (currentTask.getAvgTime() < currentTask.getElapsedTime()) {
                 return true;
         } else {
             return false;
