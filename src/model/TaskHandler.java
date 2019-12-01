@@ -69,7 +69,6 @@ public class TaskHandler {
     public void endTask(String name) {
         Task currentTask = taskMap.get(name);
         currentTask.endTime();
-        currentTask.setNumberOfTimesRun(currentTask.getNumberOfTimesRun()+1);
         currentTask.update();
 
     }
