@@ -53,7 +53,7 @@ public class Main {
             if (toQuit.equals("q")) {
                 endTask = true;
             }
-            if (taskHandler.checkTime(taskName) && notNotified) {
+            if (taskHandler.updateTime(taskName) && notNotified) {
                 System.out.println("a sound will be played");
                 notNotified = false;
             }
