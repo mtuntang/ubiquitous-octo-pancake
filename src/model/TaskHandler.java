@@ -23,7 +23,7 @@ public class TaskHandler {
     public Map getMap() {
         return taskMap;
    }
-    public void save(TaskHandler taskHandler) {
+    public void save() {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save.dat"));
             out.writeObject(this);
@@ -56,8 +56,12 @@ public class TaskHandler {
         } else {
             return false;
         }
+    }
 
-
+    public void endTask(String name) {
+        Task currentTask = taskMap.get(name);
+        currentTask.setNumberOfTimesRun(currentTask.getNumberOfTimesRun()+1);
+        currentTask.update();
 
     }
 }

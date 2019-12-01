@@ -22,6 +22,10 @@ public class Task implements Serializable{
         return avgTime;
     }
 
+    public void setNumberOfTimesRun(int numberOfTimesRun) {
+        this.numberOfTimesRun = numberOfTimesRun;
+    }
+
     public String getName() {
         return name;
     }
