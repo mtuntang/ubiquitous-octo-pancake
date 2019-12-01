@@ -20,7 +20,7 @@ public class TaskHandler {
         taskMap.remove(name);
     }
 
-    public Map getMap() {
+    public HashMap<String, Task> getMap() {
         return taskMap;
    }
     public void save() {

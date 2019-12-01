@@ -1,6 +1,8 @@
 package ui;
+import model.Task;
 import model.TaskHandler;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +14,7 @@ public class Main {
         while (userInput != 4) {
             welcome();
             userInput = in.nextInt();
-
+            userAction(userInput);
         }
     }
 
@@ -23,6 +25,7 @@ public class Main {
         System.out.println("2 - Remove a task");
         System.out.println("3 - Run a task");
         System.out.println("4 - Save and quit");
+        System.out.println("5 - View all tasks");
     }
 
     public static void queryTask() {
@@ -49,7 +52,7 @@ public class Main {
         System.out.println("enter q to stop the task");
         while (!endTask) {
             Scanner taskChecker = new Scanner(System.in);  // Create a Scanner object
-            String toQuit = myObj.nextLine();  // Read user input
+            String toQuit = taskChecker.nextLine();  // Read user input
             if (toQuit.equals("q")) {
                 endTask = true;
             }
@@ -60,5 +63,32 @@ public class Main {
         }
     }
 
+    public static void displayTasks() {
+        HashMap<String, Task> map = taskHandler.getMap();
+        for (String key : map.keySet()) {
+            System.out.println("task : " + map.get(key));
+        }
+    }
+
+    public static void userAction(int action) {
+        switch (action) {
+            case 1: {
+                queryTask();
+                break;
+            } case 2: {
+                removeTask();
+                break;
+            } case 3: {
+                runTask();
+                break;
+            } case 4: {
+                taskHandler.save();
+                break;
+            }
+            default:
+                displayTasks();
+                break;
+        }
+    }
 
 }
