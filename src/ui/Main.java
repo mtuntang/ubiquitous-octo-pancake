@@ -19,7 +19,7 @@ public class Main {
         System.out.println("1 - Add a new task");
         System.out.println("2 - Remove a task");
         System.out.println("3 - Run a task");
-        System.out.println();
+        System.out.println("4 - Save and quit");
     }
 
     public static void queryTask() {
@@ -28,18 +28,12 @@ public class Main {
         String taskName = myObj.nextLine();  // Read user input
         taskHandler.addTask(taskname);
     }
-
-    public static void queryTask() {
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-        System.out.println("Name your task: ");
-        String taskName = myObj.nextLine();  // Read user input
-        taskHandler.addTask(taskname);
-    }
+    
 
     public static void removeTask() {
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Which task would you like to remove?: ");
         String taskName = myObj.nextLine();  // Read user input
-        taskHandler.removeTask(taskname);
+        taskHandler.remove(taskName);
     }
 }
