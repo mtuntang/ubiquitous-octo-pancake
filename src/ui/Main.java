@@ -12,7 +12,7 @@ public class Main {
         while (userInput != 4) {
             welcome();
             userInput = in.nextInt();
-
+            userAction(userInput);
         }
     }
 
@@ -53,12 +53,27 @@ public class Main {
             if (toQuit.equals("q")) {
                 endTask = true;
             }
-            if (taskHandler.updateTime(taskName) && notNotified) {
+            if (taskHandler.checkTime(taskName) && notNotified) {
                 System.out.println("a sound will be played");
                 notNotified = false;
             }
         }
     }
 
+    public static void userAction(int action) {
+        switch (action) {
+            case 1: {
+                queryTask();
+                break;
+            } case 2: {
+                removeTask();
+                break;
+            } case 3: {
+                runTask();
+                break;
+            } default:
+                break;
+        }
+    }
 
 }
