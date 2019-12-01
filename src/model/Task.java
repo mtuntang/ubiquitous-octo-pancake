@@ -10,6 +10,26 @@ public class Task implements Serializable {
     private String name;
     private int numberOfTimesRun;
 
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public long getEndTime() {
+        return endTime;
+    }
+
+    public long getAvgTime() {
+        return avgTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNumberOfTimesRun() {
+        return numberOfTimesRun;
+    }
+
     public Task(String name){
         this.name = name;
     }

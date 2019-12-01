@@ -1,17 +1,15 @@
 package model;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TaskHandler {
 
-    private Map taskMap;
+    private HashMap<String, Task> taskMap;
+    private boolean run = false;
 
     public TaskHandler() {
-        taskMap = new HashMap<String, Task>();
+        taskMap = new HashMap<>();
     }
 
     public void addTask(String name) {
@@ -49,5 +47,16 @@ public class TaskHandler {
         } finally {
             return taskHandler;
         }
+    }
+
+    public void runTask(String name) {
+        Task currentTask = taskMap.get(name);
+        if (!run) {
+            if (currentTask.getAvgTime() > task.get)
+            currentTask.avgTime >
+        }
+
+
+
     }
 }
