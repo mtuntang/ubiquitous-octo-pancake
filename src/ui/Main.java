@@ -12,6 +12,7 @@ public class Main {
         while (userInput != 4) {
             welcome();
             userInput = in.nextInt();
+
         }
     }
 
@@ -38,4 +39,26 @@ public class Main {
         String taskName = myObj.nextLine();  // Read user input
         taskHandler.remove(taskName);
     }
+
+    public static void runTask() {
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Which task would you like to run?: ");
+        String taskName = myObj.nextLine();  // Read user input
+        boolean endTask = false;
+        boolean notNotified = true;
+        System.out.println("enter q to stop the task");
+        while (!endTask) {
+            Scanner taskChecker = new Scanner(System.in);  // Create a Scanner object
+            String toQuit = myObj.nextLine();  // Read user input
+            if (toQuit.equals("q")) {
+                endTask = true;
+            }
+            if (taskHandler.updateTime(taskName) && notNotified) {
+                System.out.println("a sound will be played");
+                notNotified = false;
+            }
+        }
+    }
+
+
 }
